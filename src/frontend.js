@@ -1,12 +1,12 @@
-import wdsBlocksAccordion from './blocks/accordions/frontend';
-import wdsBlocksCarousel from './blocks/carousel/frontend';
-import wdsBlocksStarter from './blocks/starter/frontend';
+// // import wdsBlocksAccordion from './blocks/accordions/frontend';
+// // import wdsBlocksCarousel from './blocks/carousel/frontend';
+// // import wdsBlocksStarter from './blocks/zombie-movies/frontend';
 
-// Accordions
-wdsBlocksAccordion.init();
+// // Accordions
+// wdsBlocksAccordion.init();
 
-// Carousel
-wdsBlocksCarousel.init();
+// // Carousel
+// wdsBlocksCarousel.init();
 
-// Starter
-wdsBlocksStarter.init();
+// // Starter
+// wdsBlocksStarter.init();

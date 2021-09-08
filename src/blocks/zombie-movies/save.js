@@ -1,6 +1,4 @@
-import { InnerBlocks } from '@wordpress/block-editor';
 import { getBlockDefaultClassName } from '@wordpress/blocks';
-import Slider from './components/Slider';
 import { PREFIX } from '../../utils/config';
 
 /**
@@ -17,23 +15,23 @@ import { PREFIX } from '../../utils/config';
  */
 export default function Save( props ) {
 	const {
-		attributes: { slideCount },
+		attributes: {
+			zombieData,
+		},
 	} = props;
 
-	// Define props relating to slider settings.
-	const sliderProps = {
-		slideCount,
-	};
-
-	const className = getBlockDefaultClassName( `${ PREFIX }/carousel` );
+	const className = getBlockDefaultClassName( `${ PREFIX }/zombie-movies` );
 
 	return (
-		<div className={ `${ className } glide` }>
-			<Slider { ...sliderProps }>
-				<ul className="glide__slides slider-slides">
-					<InnerBlocks.Content />
-				</ul>
-			</Slider>
+		<div className={ `${ className } zombie-movies` } >
+			{ Array.isArray( zombieData?.results ) && zombieData?.results?.map( ( movies ) => {
+				return (
+					<div key={ movies.id }>
+						<h2>{ movies.title }</h2>
+						<p>{ movies.overview }</p>
+					</div>
+				);
+			} ) }
 		</div>
 	);
 }

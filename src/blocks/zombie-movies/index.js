@@ -3,6 +3,7 @@ import save from './save';
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { PREFIX } from '../../utils/config';
+import Icon from './utils/icon'
 import './frontend/style.scss';
 
 /**
@@ -12,41 +13,18 @@ import './frontend/style.scss';
  * @since  2.0.0
  * @see    https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-registerBlockType( `${ PREFIX }/starter`, {
-	title: __( 'Starter Block', 'wdsblocks' ),
+registerBlockType( `${ PREFIX }/zombie-movies`, {
+	title: __( 'Zombie Movies', 'wdsblocks' ),
 	description: __(
-		'A starter block with a RichText heading and color options.',
+		'A Zombie Movies Fetcher block with a RichText heading and color options.',
 		'wdsblocks'
 	),
-	icon: 'admin-network',
+	icon: Icon,
 	category: 'wds-blocks',
-	keywords: [ __( 'starter block, richtext', 'wdsblocks' ) ],
+	keywords: [ __( 'zombie, movies, richtext', 'wdsblocks' ) ],
 	attributes: {
-		showPreview: {
-			type: 'boolean',
-			default: true,
-		},
-		align: {
-			type: 'string',
-			default: 'full',
-		},
-		title: {
-			type: 'array',
-			source: 'children',
-			selector: 'h2',
-		},
-		contentStyle: {
+		zombieData: {
 			type: 'object',
-			default: {
-				color: '#000000',
-				textAlign: 'left',
-			},
-		},
-		backgroundStyle: {
-			type: 'object',
-			default: {
-				backgroundColor: 'transparent',
-			},
 		},
 	},
 	supports: {
@@ -63,7 +41,7 @@ registerBlockType( `${ PREFIX }/starter`, {
 				color: '#F47C48',
 				textAlign: 'center',
 			},
-			title: __( 'Starter Block', 'wdsblocks' ),
+			title: __( 'Zombie Movies', 'wdsblocks' ),
 		},
 	},
 	edit,
