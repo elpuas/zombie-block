@@ -3,7 +3,7 @@ import save from './save';
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { PREFIX } from '../../utils/config';
-import Icon from './utils/icon'
+import Icon from './utils/icon';
 import './frontend/style.scss';
 
 /**
